@@ -1,10 +1,11 @@
 import streamlit as st
-import random
 
-st.title("Lanzamiento de Moneda")
+st.header('Lanzar una moneda')
 
-num_lanzamientos = st.number_input("¿Cuántas veces quieres lanzar la moneda?", min_value=1, step=1)
-if st.button("Lanzar"):
-    resultados = [random.choice(["Cara", "Cruz"]) for _ in range(int(num_lanzamientos))]
-    st.write("Resultados:")
-    st.write(resultados)
+number_of_trials = st.slider('¿Número de intentos?', 1, 1000, 10)
+start_button = st.button('Ejecutar')
+
+if start_button:
+    st.write(f'Experimento con {number_of_trials} intentos en curso.')
+
+st.write('Esta aplicación aún no es funcional. En construcción.')
